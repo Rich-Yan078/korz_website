@@ -1,0 +1,27 @@
+export interface Product {
+  id: string;
+  name: string;
+  series: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
+  specifications: {
+    material: string;
+    finish: string;
+    sizes: string[];
+  };
+}
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
+}
+
+export interface ProjectShowcase {
+  id: string;
+  title: string;
+  location: string;
+  image: string;
+  description: string;
+}
