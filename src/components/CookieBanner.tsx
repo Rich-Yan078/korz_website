@@ -93,59 +93,50 @@ export default function CookieBanner() {
   }
 
   return (
-    <div style={{
-      position: "fixed",
-      bottom: 18,
-      left: 18,
-      right: 18,
-      zIndex: 9999,
-      boxShadow: "0 6px 30px rgba(0,0,0,0.12)",
-      borderRadius: 10,
-      background: "white",
-      padding: "16px 18px",
-      display: "flex",
-      gap: 12,
-      alignItems: "center",
-      justifyContent: "space-between",
-      maxWidth: 1000,
-      margin: "0 auto"
-    }}>
-      <div style={{flex: 1, fontSize: 14, color: "#111"}}>
-        Мы используем cookies и сервисы аналитики (Яндекс.Метрика / Google Analytics) для
-        улучшения работы сайта и анализа посещаемости. Подробнее в{" "}
-        <Link to="/cookies">Политике Cookies</Link> и{" "}
-        <Link to="/privacy">Политике конфиденциальности</Link>.
-      </div>
+    <div className="fixed bottom-6 left-6 right-6 z-[9999] max-w-5xl mx-auto animate-slide-up">
+      <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 backdrop-blur-xl rounded-2xl shadow-2xl border border-yellow-500/30 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-yellow-600/5"></div>
 
-      <div style={{display: "flex", gap: 8, alignItems: "center"}}>
-        <button
-          onClick={decline}
-          style={{
-            padding: "8px 12px",
-            borderRadius: 8,
-            border: "1px solid #ccc",
-            background: "transparent",
-            cursor: "pointer"
-          }}
-        >
-          Отклонить
-        </button>
+        <div className="relative p-6 md:p-8">
+          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
+            <div className="flex-shrink-0">
+              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg">
+                <svg className="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+              </div>
+            </div>
 
-        <button
-          onClick={accept}
-          style={{
-            padding: "8px 12px",
-            borderRadius: 8,
-            border: "none",
-            background: "#0070f3",
-            color: "white",
-            cursor: "pointer"
-          }}
-        >
-          Разрешить
-        </button>
+            <div className="flex-1">
+              <h3 className="text-xl font-bold text-white mb-2">Настройки конфиденциальности</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Мы используем cookies и сервисы аналитики (Яндекс.Метрика / Google Analytics) для
+                улучшения работы сайта и анализа посещаемости. Подробнее в{" "}
+                <Link to="/cookies" className="text-yellow-400 hover:text-yellow-300 underline font-medium">
+                  Политике Cookies
+                </Link>.
+              </p>
+            </div>
 
-        <Link to="/cookies" style={{fontSize: 12, color: "#666", marginLeft: 6}}>Настройки</Link>
+            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <button
+                onClick={decline}
+                className="px-6 py-3 rounded-xl border-2 border-gray-600 text-gray-300 font-semibold hover:bg-gray-700 hover:border-gray-500 transition-all duration-300"
+              >
+                Отклонить
+              </button>
+
+              <button
+                onClick={accept}
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold hover:shadow-xl hover:shadow-yellow-500/30 transition-all duration-300"
+              >
+                Разрешить все
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-1 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500"></div>
       </div>
     </div>
   );
