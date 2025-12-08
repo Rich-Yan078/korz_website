@@ -9,7 +9,7 @@ export default function Hero({ onExplore }: HeroProps) {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/src/assets/img_4205.jpg"
+          src="/src/assets/img_4205 copy.jpg"
           alt="Building with ventilation grilles"
           className="w-full h-full object-cover"
         />
