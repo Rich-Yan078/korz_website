@@ -1,4 +1,4 @@
-import { ArrowRight, AirVent } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
 
 interface HeroProps {
   onExplore: () => void;
@@ -18,25 +18,21 @@ export default function Hero({ onExplore }: HeroProps) {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/30 rounded-full mb-6">
-            <AirVent className="text-yellow-400" size={20} />
-            <span className="text-white text-sm font-medium">Премиум решения вентиляции</span>
-          </div>
+         
+          <h1 className="font-extrabold leading-tight text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-             Корзины, панели и экраны
-           <br />
-           <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 text-5xl sm:text-6xl md:text-8xl">
-            для кондиционеров
-           </span>
+              Корзины, панели и экраны
+            </h1>
+
+            <div className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 text-5xl sm:text-6xl md:text-8xl">
+              для кондиционеров
+            </div>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto drop-shadow-lg">
-            Откройте нашу эксклюзивную коллекцию архитектурных вентиляционных решеток.
-            Где инженерное совершенство встречается с изысканным дизайном.
-          </p>
+          {/* Описание убрано по просьбе */}
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
             <button
               onClick={onExplore}
               className="group px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-yellow-500/40 transition-all duration-300 flex items-center gap-2"

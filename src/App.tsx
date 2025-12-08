@@ -14,7 +14,6 @@ import PersonalDataAgreement from './components/pages/PersonalDataAgreement';
 import CookiesPage from './components/Cookies';
 import CookieBanner from "./components/CookieBanner";
 
-
 // Главный компонент для домашней страницы
 function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
