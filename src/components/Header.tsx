@@ -17,8 +17,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-              <div className="w-6 h-6 border-2 border-white/30 rounded"></div>
+            <div className="w-8 h-8 flex items-center justify-center">
+              <img 
+                src="/branding/ventgold-logo.png"     
+                alt="VENTGOLD logo"
+                className="w-8 h-8 object-contain"
+              />
             </div>
             <span className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">
               VENT<span className="text-blue-600">GOLD</span>

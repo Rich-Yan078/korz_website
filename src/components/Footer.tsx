@@ -15,8 +15,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-600 mb-4 max-w-md">
-              Премиум-решетки вентиляции, которые объединяют инженерное совершенство с изысканным дизайном.
-              Преобразуем пространства в Москве с 2014 года.
+              © Вентиляционные системы в Москве и Московской области. Вся представленная на сайте информация носит информационный характер и не является публичной офертой, определяемой положениями ст. 437 (2) ГК РФ. Обращаем Ваше внимание, что цвет и пропорции продукции представленной на сайте может отличаться от реального. Точный цвет, дизайн и размерности указываются при оформлении заказа.
             </p>
             <div className="flex gap-4">
               <a href="#" className="p-2 bg-blue-100 hover:bg-blue-200 rounded-lg transition-colors">
@@ -75,7 +74,7 @@ export default function Footer() {
             <a href="/personal-data-agreement" className="text-gray-500 hover:text-blue-600 transition-colors">
               Соглашение на обработку персональных данных
             </a>
-            <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">
+            <a href="/cookies" className="text-gray-500 hover:text-blue-600 transition-colors">
               Политика cookies
             </a>
           </div>

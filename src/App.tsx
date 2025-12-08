@@ -11,6 +11,9 @@ import Footer from './components/Footer';
 import { products, projects } from './data/products';
 import { Product } from './types';
 import PersonalDataAgreement from './components/pages/PersonalDataAgreement';
+import CookiesPage from './components/Cookies';
+import CookieBanner from "./components/CookieBanner";
+
 
 // Главный компонент для домашней страницы
 function HomePage() {
@@ -46,9 +49,18 @@ function HomePage() {
 
 export default function App() {
   return (
+    <>
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/personal-data-agreement" element={<PersonalDataAgreement />} />
+      <Route path="/cookies" element={<CookiesPage />} />
     </Routes>
+
+      {/* Футер всегда внизу */}
+      
+
+      {/* Баннер вынесен глобально, он сам скрывается после выбора */}
+      <CookieBanner />
+    </>
   );
 }
