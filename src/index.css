@@ -16,3 +16,33 @@
 .animate-slide-up {
   animation: slide-up 0.5s ease-out;
 }
+/* Hero -> Catalog transition styles */
+
+#section-hero .relative.z-10 {
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+#section-hero.hero-animating .relative.z-10 {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+#section-hero .absolute.inset-0 img,
+#section-hero .absolute.inset-0 > div:first-child img {
+  transition: transform 750ms cubic-bezier(.2,.9,.25,1);
+  transform-origin: center center;
+}
+
+#section-hero.hero-animating .absolute.inset-0 img,
+#section-hero.hero-animating .absolute.inset-0 > div:first-child img {
+  transform: scale(1.02);
+}
+
+#section-hero .scroll-hint {
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+#section-hero.hero-animating .scroll-hint {
+  opacity: 0;
+  transform: translateY(12px);
+}
