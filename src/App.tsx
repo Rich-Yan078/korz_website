@@ -36,12 +36,16 @@ function HomePage() {
   useEffect(() => {
     let touchStartY = 0;
 
+    // Новая логика: анимацию можно запускать только если реально вверху
     function atHeroTop() {
       const hero = document.getElementById(heroId);
       if (!hero) return false;
 
       const heroHeight = hero.offsetHeight;
-      return window.scrollY < heroHeight - 50;   // защита от "залипания" наверху
+      const scrollY = window.scrollY;
+
+      // Разрешаем переход только в верхних 40% HERO
+      return scrollY < heroHeight * 0.4;
     }
 
     const startTouch = (e: TouchEvent) => {
@@ -49,15 +53,23 @@ function HomePage() {
     };
 
     const endTouch = (e: TouchEvent) => {
-      if (!atHeroTop()) return; // Важная защита
+      if (!atHeroTop()) return;
 
       const endY = e.changedTouches?.[0]?.clientY ?? 0;
       const delta = touchStartY - endY;
 
-      if (delta > 30) triggerHeroTransition(); // свайп вверх
+      // Только свайп ВВЕРХ → переход
+      if (delta > 30) triggerHeroTransition();
+
+      // Свайп вниз → ничего (ОТКЛЮЧЕН переход назад)
     };
 
     const handleWheel = (e: WheelEvent) => {
+      // Сначала блокируем скролл вверх!
+      if (e.deltaY < 0) {
+        return; // ← Отключили возврат к HERO
+      }
+
       if (!atHeroTop()) return;
 
       if (isHeroAnimating) {
@@ -65,6 +77,7 @@ function HomePage() {
         return;
       }
 
+      // Только движение вниз
       if (e.deltaY > 0) {
         e.preventDefault();
         triggerHeroTransition();
@@ -81,7 +94,6 @@ function HomePage() {
       setIsHeroAnimating(true);
       heroEl.classList.add('hero-animating');
 
-      // задержка, чтобы анимация исчезновения надписи успела проиграться
       setTimeout(() => {
         catalogEl.scrollIntoView({ behavior: "smooth" });
 
@@ -89,7 +101,7 @@ function HomePage() {
           heroEl.classList.remove("hero-animating");
           setIsHeroAnimating(false);
         }, 600);
-      }, 700); // <<< более плавно и видно анимацию
+      }, 700);
     }
 
     window.addEventListener("wheel", handleWheel, { passive: false });

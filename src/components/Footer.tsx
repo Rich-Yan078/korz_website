@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Mail} from 'lucide-react';
+import {  Instagram, Mail, Send} from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -15,15 +15,15 @@ export default function Footer() {
                 />
               </div>
               <span className="text-2xl font-bold text-gray-900">
-                VENT<span className="text-yellow-600">GOLD</span>
+                VENT<span className="text-yellow-400">GOLD</span>
               </span>
             </div>
             <p className="text-gray-600 mb-4 max-w-md">
               © Вентиляционные системы в Москве и Московской области. Вся представленная на сайте информация носит информационный характер и не является публичной офертой, определяемой положениями ст. 437 (2) ГК РФ. Обращаем Ваше внимание, что цвет и пропорции продукции представленной на сайте может отличаться от реального. Точный цвет, дизайн и размерности указываются при оформлении заказа.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
-                <Facebook className="text-gray-600 hover:text-yellow-600" size={20} />
+              <a href="https://web.telegram.org/k/#@Rich_Yan" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
+                <Send className="text-gray-600 hover:text-yellow-600" size={20} />
               </a>
               <a href="#" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
                 <Instagram className="text-gray-600 hover:text-yellow-600" size={20} />

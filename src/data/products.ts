@@ -3,11 +3,10 @@ import { Product, ProjectShowcase } from '../types';
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Linear Ventilation Grille S-Series',
-    series: 'S',
+    name: 'Корзина',
     description: 'Premium linear grille with minimalist design for modern interiors',
     price: 4500,
-    image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'korzina.png',
     category: 'Linear',
     specifications: {
       material: 'Anodized Aluminum',
@@ -18,10 +17,9 @@ export const products: Product[] = [
   {
     id: '2',
     name: 'Decorative Grille M-Series',
-    series: 'M',
     description: 'Elegant decorative grille with intricate pattern details',
     price: 6200,
-    image: 'https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'panel.png',
     category: 'Decorative',
     specifications: {
       material: 'Brass',
@@ -32,10 +30,9 @@ export const products: Product[] = [
   {
     id: '3',
     name: 'Ceiling Grille V-Series',
-    series: 'V',
     description: 'Versatile ceiling-mounted grille for optimal air distribution',
     price: 3800,
-    image: 'https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'panel_krug.png',
     category: 'Ceiling',
     specifications: {
       material: 'Steel',
@@ -46,10 +43,9 @@ export const products: Product[] = [
   {
     id: '4',
     name: 'Return Air Grille VRC-Series',
-    series: 'VRC',
     description: 'High-capacity return air grille with superior airflow',
     price: 5100,
-    image: 'https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '',
     category: 'Return Air',
     specifications: {
       material: 'Aluminum',
@@ -60,7 +56,6 @@ export const products: Product[] = [
   {
     id: '5',
     name: 'Floor Grille L-Series',
-    series: 'L',
     description: 'Durable floor-mounted grille for underfloor ventilation',
     price: 7800,
     image: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -74,7 +69,6 @@ export const products: Product[] = [
   {
     id: '6',
     name: 'Adjustable Grille R-Series',
-    series: 'R',
     description: 'Multi-directional adjustable grille for precise airflow control',
     price: 4900,
     image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -92,7 +86,7 @@ export const projects: ProjectShowcase[] = [
     id: '1',
     title: 'Luxury Residential Complex',
     location: 'Moscow City Center',
-    image: 'https://images.pexels.com/photos/1488267/pexels-photo-1488267.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'korzina_orange.png',
     description: 'Complete ventilation system with custom bronze grilles for 50 premium apartments'
   },
   {

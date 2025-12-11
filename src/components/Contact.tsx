@@ -16,7 +16,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 bg-gradient-to-b from-white to-blue-50">
+    <section id="contact" className="py-32 bg-gradient-to-b from-white to-yellow-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -80,7 +80,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-lg hover:shadow-2xl hover:shadow-blue-600/20 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-blue-600/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 Отправить сообщение
                 <Send size={20} />

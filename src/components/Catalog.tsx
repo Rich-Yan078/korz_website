@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Product } from "../types";
 import ProductCard from "./ProductCard";
 
@@ -8,63 +8,86 @@ interface CatalogProps {
 }
 
 export default function Catalog({ products, onViewDetails }: CatalogProps) {
+  const [visibleItems, setVisibleItems] = useState<number>(0);
+  const [animationStarted, setAnimationStarted] = useState<boolean>(false);
 
-  //  Эффект приближения фона при скролле
+  // Следим за появлением каталога на экране → запускаем анимацию
   useEffect(() => {
-    const catalog = document.getElementById("section-catalog-bg");
+    const section = document.getElementById("section-catalog");
+    if (!section) return;
 
-    const handleScroll = () => {
-      if (!catalog) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !animationStarted) {
+          setAnimationStarted(true);
 
-      const scrolled = window.scrollY;
-      const zoom = 1 + Math.min(scrolled / 1500, 0.15); 
-      catalog.style.transform = `scale(${zoom})`;
-    };
+          // Запускаем красивое последовательное появление
+          products.forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleItems((prev) => prev + 1);
+            }, index * 120); // задержка между карточками
+          });
+        }
+      },
+      { threshold: 0.3 }
+    );
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, [products, animationStarted]);
 
   return (
-    <section id="catalog" className="relative py-32 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-t from-transparent to-black/80 pointer-events-none z-10" />
+    <section
+      id="catalog"
+      className="relative py-28 overflow-hidden"
+    >
+      <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-t from-transparent to-black/60 pointer-events-none z-10" />
 
-      {/* --- Фон с фото и плавным зумом --- */}
-      <div
-        id="section-catalog-bg"
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-[300ms]"
-        style={{
-          backgroundImage: `url("/catalog_fon.png")`, // имя файла
-        }}
+      <img
+        src="/catalog_fon.WebP"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
 
-      {/* --- Затемнение (overlay) --- */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-[3px]" />
+      <div className="absolute inset-0 bg-black/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Заголовок */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
             Наша <span className="text-yellow-300">Коллекция</span>
           </h2>
+
           <p className="text-white/90 text-lg max-w-2xl mx-auto mt-4">
             Изготавливаем из высококачественного оцинкованного металла и красим порошковой краской.
           </p>
         </div>
 
-        {/* Товары */}
+        {/* Сетка карточек */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {products.map((product) => (
-            <ProductCard
+          {products.map((product, index) => (
+            <div
               key={product.id}
-              product={product}
-              onViewDetails={onViewDetails}
-            />
+              className={`transition-all duration-700 ease-out
+                ${index < visibleItems
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+                }`}
+              style={{
+                transitionDelay: `${index * 80}ms`,
+              }}
+            >
+              <ProductCard
+                product={product}
+                onViewDetails={onViewDetails}
+              />
+            </div>
           ))}
         </div>
 
-        {/* Если товаров нет */}
         {products.length === 0 && (
           <div className="text-center py-12">
             <p className="text-white/80 text-lg">Товары не найдены</p>
