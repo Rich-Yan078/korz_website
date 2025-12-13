@@ -16,6 +16,15 @@ import CookieBanner from "./components/CookieBanner";
 
 // ---------- ГЛАВНАЯ СТРАНИЦА ----------
 function HomePage() {
+
+  // ★ ДОБАВЛЕНО: данные заказа
+  const [orderData, setOrderData] = useState({
+    product: "",
+    size: "",
+    color: "",
+    price: 0
+  });
+
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isProductModalOpen, setIsProductModalOpen] = useState(false);
 
@@ -36,7 +45,6 @@ function HomePage() {
   useEffect(() => {
     let touchStartY = 0;
 
-    // Новая логика: анимацию можно запускать только если реально вверху
     function atHeroTop() {
       const hero = document.getElementById(heroId);
       if (!hero) return false;
@@ -44,7 +52,6 @@ function HomePage() {
       const heroHeight = hero.offsetHeight;
       const scrollY = window.scrollY;
 
-      // Разрешаем переход только в верхних 40% HERO
       return scrollY < heroHeight * 0.4;
     }
 
@@ -58,18 +65,11 @@ function HomePage() {
       const endY = e.changedTouches?.[0]?.clientY ?? 0;
       const delta = touchStartY - endY;
 
-      // Только свайп ВВЕРХ → переход
       if (delta > 30) triggerHeroTransition();
-
-      // Свайп вниз → ничего (ОТКЛЮЧЕН переход назад)
     };
 
     const handleWheel = (e: WheelEvent) => {
-      // Сначала блокируем скролл вверх!
-      if (e.deltaY < 0) {
-        return; // ← Отключили возврат к HERO
-      }
-
+      if (e.deltaY < 0) return;
       if (!atHeroTop()) return;
 
       if (isHeroAnimating) {
@@ -77,7 +77,6 @@ function HomePage() {
         return;
       }
 
-      // Только движение вниз
       if (e.deltaY > 0) {
         e.preventDefault();
         triggerHeroTransition();
@@ -131,13 +130,19 @@ function HomePage() {
 
       <Projects projects={projects} />
       <FAQ />
-      <Contact />
+
+      {/* ★ ДОБАВЛЕНО: передача orderData */}
+      <Contact orderData={orderData} setOrderData={setOrderData} />
+
       <Footer />
 
       <ProductModal
         product={selectedProduct}
         isOpen={isProductModalOpen}
         onClose={() => setIsProductModalOpen(false)}
+
+        // ★ ДОБАВЛЕНО — получение данных конфигурации:
+        onSelectConfig={setOrderData}
       />
     </div>
   );

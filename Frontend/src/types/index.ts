@@ -8,6 +8,7 @@ export interface Product {
   specifications: {
     material: string;
     finish: string;
+    coating: string;
     sizes: string[];
   };
 }

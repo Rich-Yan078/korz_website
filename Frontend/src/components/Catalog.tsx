@@ -45,7 +45,7 @@ export default function Catalog({ products, onViewDetails }: CatalogProps) {
       <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-t from-transparent to-black/60 pointer-events-none z-10" />
 
       <img
-        src="/catalog_fon.WebP"
+        src="/catalog_fon.jpg"
         alt=""
         aria-hidden="true"
         loading="lazy"

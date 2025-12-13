@@ -63,8 +63,8 @@ export default function Hero({ onExplore }: HeroProps) {
             type="image/webp"
             srcSet={
               shouldLoadFullImage
-                ? "/src/assets/img_4205 copy.webp"
-                : "/src/assets/img_4205 copy-small.webp"
+                ? "/src/assets/img_4205 copy.jpg"
+                : "/src/assets/img_4205 copy-small.jpg"
             }
             sizes="100vw"
           />

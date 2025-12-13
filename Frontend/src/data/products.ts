@@ -3,14 +3,16 @@ import { Product, ProjectShowcase } from '../types';
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Корзина',
+    name: 'Корзина для кондиционера',
     description: 'Premium linear grille with minimalist design for modern interiors',
-    price: 4500,
+    price: 5000,
     image: 'korzina.png',
     category: 'Linear',
     specifications: {
-      material: 'Anodized Aluminum',
-      finish: 'Matte Black / Bronze',
+      material: 'Оцинкованная сталь',
+      finish: 'Ламели',
+      coating: 'Powder Coated / Anodized',
+      
       sizes: ['600x100mm', '800x100mm', '1000x100mm']
     }
   },
@@ -22,8 +24,10 @@ export const products: Product[] = [
     image: 'panel.png',
     category: 'Decorative',
     specifications: {
-      material: 'Brass',
-      finish: 'Polished Gold / Antique Bronze',
+      material: 'Оцинкованная сталь',
+      finish: 'Ламели',
+      coating: 'Powder Coated / Anodized',
+
       sizes: ['400x400mm', '500x500mm', '600x600mm']
     }
   },
@@ -35,8 +39,10 @@ export const products: Product[] = [
     image: 'panel_krug.png',
     category: 'Ceiling',
     specifications: {
-      material: 'Steel',
+      material: 'Оцинкованная сталь',
       finish: 'Powder Coated White / Black',
+      coating: 'Powder Coated / Anodized',
+
       sizes: ['300x300mm', '400x400mm', '500x500mm']
     }
   },
@@ -48,8 +54,10 @@ export const products: Product[] = [
     image: '',
     category: 'Return Air',
     specifications: {
-      material: 'Aluminum',
+      material: 'Оцинкованная сталь',
       finish: 'Natural / Anodized',
+      coating: 'Powder Coated / Anodized',
+
       sizes: ['800x200mm', '1000x250mm', '1200x300mm']
     }
   },
@@ -61,8 +69,9 @@ export const products: Product[] = [
     image: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=800',
     category: 'Floor',
     specifications: {
-      material: 'Stainless Steel',
+      material: 'Оцинкованная сталь',
       finish: 'Brushed / Mirror Polished',
+      coating: 'Powder Coated / Anodized',
       sizes: ['200x1000mm', '300x1000mm', '400x1200mm']
     }
   },
@@ -74,8 +83,9 @@ export const products: Product[] = [
     image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800',
     category: 'Adjustable',
     specifications: {
-      material: 'Plastic / Aluminum',
+      material: 'Оцинкованная сталь',
       finish: 'White / Black / Custom',
+      coating: 'Powder Coated / Anodized',
       sizes: ['250x250mm', '350x350mm', '450x450mm']
     }
   }

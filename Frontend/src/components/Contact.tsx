@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Send, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
-export default function Contact() {
+export default function Contact({ orderData, setOrderData }: any) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,13 +11,23 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    console.log("ОТПРАВКА ЗАЯВКИ:", {
+      ...formData,
+      ...orderData
+    });
+
     alert('Спасибо за ваш запрос! Мы свяжемся с вами в ближайшее время.');
+
     setFormData({ name: '', email: '', phone: '', message: '' });
+    setOrderData({ product: "", size: "", color: "", price: 0 });
   };
 
   return (
     <section id="contact" className="py-32 bg-gradient-to-b from-white to-yellow-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Заголовок */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Свяжитесь с <span className="text-blue-600">Нами</span>
@@ -27,9 +37,24 @@ export default function Contact() {
           </p>
         </div>
 
+        {/* ✔ Блок выбранного товара */}
+        {orderData?.product && (
+          <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-6 mb-12">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Вы выбрали:</h3>
+
+            <p className="text-gray-800"><b>Товар:</b> {orderData.product}</p>
+            <p className="text-gray-800"><b>Размер:</b> {orderData.size}</p>
+            <p className="text-gray-800"><b>Цвет (RAL):</b> {orderData.color}</p>
+            <p className="text-gray-800"><b>Цена:</b> {orderData.price.toLocaleString()} ₽</p>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          {/* ФОРМА */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
+
               <div>
                 <label className="block text-gray-700 mb-2 font-medium">Полное имя</label>
                 <input
@@ -37,7 +62,7 @@ export default function Contact() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-600 transition-colors"
+                  className="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg"
                   placeholder="Введите ваше имя"
                 />
               </div>
@@ -49,8 +74,8 @@ export default function Contact() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-600 transition-colors"
-                  placeholder="ваш@email.com"
+                  className="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg"
+                  placeholder="email@example.com"
                 />
               </div>
 
@@ -61,7 +86,7 @@ export default function Contact() {
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-600 transition-colors"
+                  className="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg"
                   placeholder="+7 (___) ___-__-__"
                 />
               </div>
@@ -73,14 +98,14 @@ export default function Contact() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={5}
-                  className="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-600 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg resize-none"
                   placeholder="Расскажите о вашем проекте..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-blue-600/20 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold rounded-lg flex items-center justify-center gap-2"
               >
                 Отправить сообщение
                 <Send size={20} />
@@ -88,7 +113,10 @@ export default function Contact() {
             </form>
           </div>
 
+          {/* ПРАВАЯ ЧАСТЬ */}
           <div className="space-y-8">
+
+            {/* Контакты */}
             <div className="bg-white border border-blue-200 rounded-xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Контактная информация</h3>
 
@@ -99,8 +127,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-gray-600 text-sm mb-1">Телефон</div>
-                    <a href="tel:+79990000001" className="text-gray-900 text-lg font-semibold hover:text-blue-600 transition-colors">
-                      +7 (999) 000 00 01 
+                    <a href="tel:+79990000001" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
+                      +7 (999) 000-00-01
                     </a>
                   </div>
                 </div>
@@ -111,7 +139,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-gray-600 text-sm mb-1">Email</div>
-                    <a href="mailto:info@ventgold.ru" className="text-gray-900 text-lg font-semibold hover:text-blue-600 transition-colors">
+                    <a href="mailto:info@ventgold.ru" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
                       info@ventgold.ru
                     </a>
                   </div>
@@ -123,9 +151,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-gray-600 text-sm mb-1">Адрес</div>
-                    <p className="text-gray-900 text-lg font-semibold">
-                      Москва, Россия
-                    </p>
+                    <p className="text-lg font-semibold text-gray-900">Москва, Россия</p>
                   </div>
                 </div>
 
@@ -135,7 +161,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-gray-600 text-sm mb-1">WhatsApp</div>
-                    <a href="https://wa.me/79938924489" className="text-gray-900 text-lg font-semibold hover:text-blue-600 transition-colors">
+                    <a href="https://wa.me/79938924489" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
                       +7 (999) 000-00-01
                     </a>
                   </div>
@@ -143,24 +169,30 @@ export default function Contact() {
               </div>
             </div>
 
+            {/* Часы работы */}
             <div className="bg-gradient-to-br from-blue-100 to-blue-50 border border-blue-300 rounded-xl p-8">
               <h4 className="text-xl font-bold text-gray-900 mb-3">Часы работы</h4>
+
               <div className="space-y-2 text-gray-700">
                 <div className="flex justify-between">
                   <span>Пн - Пт:</span>
                   <span className="text-blue-600 font-semibold">9:00 - 19:00</span>
                 </div>
+
                 <div className="flex justify-between">
                   <span>Суббота:</span>
                   <span className="text-gray-600 font-semibold">Закрыто</span>
                 </div>
+
                 <div className="flex justify-between">
                   <span>Воскресенье:</span>
                   <span className="text-gray-600 font-semibold">Закрыто</span>
                 </div>
               </div>
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
