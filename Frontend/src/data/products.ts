@@ -4,89 +4,107 @@ export const products: Product[] = [
   {
     id: '1',
     name: 'Корзина для кондиционера',
-    description: 'Premium linear grille with minimalist design for modern interiors',
-    price: 5000,
+    description: [
+  'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
+  'Мы производим корзины для кондиционеров с разнообразной перфорацией и разной комплектацией на заказ.'
+                  ],
+    price: 6000,
     image: 'korzina.png',
     category: 'Linear',
     specifications: {
       material: 'Оцинкованная сталь',
       finish: 'Ламели',
-      coating: 'Powder Coated / Anodized',
+      coating: 'Порошковое покрытие',
       
-      sizes: ['600x100mm', '800x100mm', '1000x100mm']
+      sizes: ['900x600х500mm', '1000x600х500mm', '1200x600х500mm']
     }
   },
   {
     id: '2',
-    name: 'Decorative Grille M-Series',
-    description: 'Elegant decorative grille with intricate pattern details',
-    price: 6200,
+    name: 'Панель для кондиционера',
+    description: [
+  'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
+  'Мы производим корзины для кондиционеров с разнообразной перфорацией и разной комплектацией на заказ.'
+                  ],
+    price: 6000,
     image: 'panel.png',
     category: 'Decorative',
     specifications: {
       material: 'Оцинкованная сталь',
       finish: 'Ламели',
-      coating: 'Powder Coated / Anodized',
+      coating: 'Порошковое покрытие',
 
-      sizes: ['400x400mm', '500x500mm', '600x600mm']
+      sizes: ['900x600х500mm', '1000x600х500mm', '1200x600х500mm']
     }
   },
   {
     id: '3',
-    name: 'Ceiling Grille V-Series',
-    description: 'Versatile ceiling-mounted grille for optimal air distribution',
-    price: 3800,
+    name: 'Панель для кондиционера',
+    description: [
+  'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
+  'Мы производим корзины для кондиционеров с разнообразной перфорацией и разной комплектацией на заказ.'
+                  ],
+    price: 6000,
     image: 'panel_krug.png',
     category: 'Ceiling',
     specifications: {
       material: 'Оцинкованная сталь',
-      finish: 'Powder Coated White / Black',
-      coating: 'Powder Coated / Anodized',
+      finish: 'Перфорация-круг',
+      coating: 'Порошковое покрытие',
 
-      sizes: ['300x300mm', '400x400mm', '500x500mm']
+      sizes: ['900x600х500mm', '1000x600х500mm', '1200x600х500mm']
     }
   },
   {
     id: '4',
-    name: 'Return Air Grille VRC-Series',
-    description: 'High-capacity return air grille with superior airflow',
-    price: 5100,
-    image: '',
+    name: 'Корзина для кондиционера',
+    description: [
+  'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
+  'Мы производим корзины для кондиционеров с разнообразной перфорацией и разной комплектацией на заказ.'
+                  ],
+    price: 6000,
+    image: 'kirpich_korzina.png',
     category: 'Return Air',
     specifications: {
       material: 'Оцинкованная сталь',
-      finish: 'Natural / Anodized',
-      coating: 'Powder Coated / Anodized',
+      finish: 'Перфорация-кирпич',
+      coating: 'Порошковое покрытие',
 
-      sizes: ['800x200mm', '1000x250mm', '1200x300mm']
+      sizes: ['900x600х500mm', '1000x600х500mm', '1200x600х500mm']
     }
   },
   {
     id: '5',
-    name: 'Floor Grille L-Series',
-    description: 'Durable floor-mounted grille for underfloor ventilation',
-    price: 7800,
-    image: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=800',
+    name: 'Корзина для кондиционера',
+    description: [
+  'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
+  'Мы производим корзины для кондиционеров с разнообразной перфорацией и разной комплектацией на заказ.'
+                  ],
+    price: 6000,
+    image: 'korzina_kvadrat.png',
     category: 'Floor',
     specifications: {
       material: 'Оцинкованная сталь',
-      finish: 'Brushed / Mirror Polished',
-      coating: 'Powder Coated / Anodized',
-      sizes: ['200x1000mm', '300x1000mm', '400x1200mm']
+      finish: 'Перфорация-квадрат',
+      coating: 'Порошковое покрытие',
+      sizes: ['900x600х500mm', '1000x600х500mm', '1200x600х500mm']
     }
   },
   {
     id: '6',
-    name: 'Adjustable Grille R-Series',
-    description: 'Multi-directional adjustable grille for precise airflow control',
-    price: 4900,
-    image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800',
+    name: 'Кронштейны ',
+    description: [
+  'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
+  'Мы производим корзины для кондиционеров с разнообразной перфорацией и разной комплектацией на заказ.'
+                  ],
+    price: 3500,
+    image: 'kronshteyni.png',
     category: 'Adjustable',
     specifications: {
       material: 'Оцинкованная сталь',
-      finish: 'White / Black / Custom',
-      coating: 'Powder Coated / Anodized',
-      sizes: ['250x250mm', '350x350mm', '450x450mm']
+      finish: 'Кронштейн',
+      coating: 'Порошковое покрытие',
+      sizes: ['900x600х500mm', '1000x600х500mm', '1200x600х500mm']
     }
   }
 ];
@@ -96,7 +114,7 @@ export const projects: ProjectShowcase[] = [
     id: '1',
     title: 'Luxury Residential Complex',
     location: 'Moscow City Center',
-    image: 'korzina_orange.png',
+    image: 'A101.JPG',
     description: 'Complete ventilation system with custom bronze grilles for 50 premium apartments'
   },
   {

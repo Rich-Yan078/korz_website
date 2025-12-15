@@ -54,13 +54,13 @@ export default function Hero({ onExplore }: HeroProps) {
             type="image/avif"
             srcSet={
               shouldLoadFullImage
-                ? "/src/assets/img_4205 copy.avif"
-                : "/src/assets/img_4205 copy-small.avif"
+                ? "/src/assets/img_4205 copy.jpg"
+                : "/src/assets/img_4205 copy-small.jpg"
             }
             sizes="100vw"
           />
           <source
-            type="image/webp"
+            type="image/jpg"
             srcSet={
               shouldLoadFullImage
                 ? "/src/assets/img_4205 copy.jpg"

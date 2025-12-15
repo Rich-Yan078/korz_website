@@ -9,8 +9,15 @@ export default function Contact({ orderData, setOrderData }: any) {
     message: ''
   });
 
+  const [agreement, setAgreement] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!agreement) {
+      alert('Для отправки заявки необходимо дать согласие');
+      return;
+    }
 
     console.log("ОТПРАВКА ЗАЯВКИ:", {
       ...formData,
@@ -21,6 +28,7 @@ export default function Contact({ orderData, setOrderData }: any) {
 
     setFormData({ name: '', email: '', phone: '', message: '' });
     setOrderData({ product: "", size: "", color: "", price: 0 });
+    setAgreement(false);
   };
 
   return (
@@ -50,7 +58,7 @@ export default function Contact({ orderData, setOrderData }: any) {
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
+
           {/* ФОРМА */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -91,16 +99,47 @@ export default function Contact({ orderData, setOrderData }: any) {
                 />
               </div>
 
+              {/* Сообщение — НЕобязательное */}
               <div>
-                <label className="block text-gray-700 mb-2 font-medium">Сообщение</label>
+                <label className="block text-gray-700 mb-2 font-medium">
+                  Сообщение <span className="text-gray-400">(необязательно)</span>
+                </label>
                 <textarea
-                  required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={5}
                   className="w-full px-4 py-3 bg-white border border-blue-300 rounded-lg resize-none"
                   placeholder="Расскажите о вашем проекте..."
                 />
+              </div>
+
+              {/* СОГЛАСИЕ — ДОБАВЛЕНО */}
+              <div className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  checked={agreement}
+                  onChange={(e) => setAgreement(e.target.checked)}
+                  className="mt-1 w-5 h-5 accent-yellow-500"
+                  required
+                />
+                <p className="text-sm text-gray-600 leading-snug">
+                  Отправляя заявку, я даю согласие на{' '}
+                  <a
+                    href="http://localhost:5173/personal-data-agreement"
+                    target="_blank"
+                    className="text-black-600 underline hover:text-black-800"
+                  >
+                    обработку своих персональных данных
+                  </a>{' '}
+                  и подтверждаю ознакомление с{' '}
+                  <a
+                    href="http://localhost:5173/privacy-policy"
+                    target="_blank"
+                    className="text-black-600 underline hover:text-black-800"
+                  >
+                    политикой конфиденциальности
+                  </a>.
+                </p>
               </div>
 
               <button
@@ -110,10 +149,11 @@ export default function Contact({ orderData, setOrderData }: any) {
                 Отправить сообщение
                 <Send size={20} />
               </button>
+
             </form>
           </div>
 
-          {/* ПРАВАЯ ЧАСТЬ */}
+          {/* ПРАВАЯ ЧАСТЬ — ПОЛНОСТЬЮ ТВОЯ, БЕЗ ИЗМЕНЕНИЙ */}
           <div className="space-y-8">
 
             {/* Контакты */}
@@ -127,8 +167,8 @@ export default function Contact({ orderData, setOrderData }: any) {
                   </div>
                   <div>
                     <div className="text-gray-600 text-sm mb-1">Телефон</div>
-                    <a href="tel:+79990000001" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                      +7 (999) 000-00-01
+                    <a href="tel:+79938924489" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
+                      +7 (993) 892-44-89
                     </a>
                   </div>
                 </div>
@@ -162,7 +202,7 @@ export default function Contact({ orderData, setOrderData }: any) {
                   <div>
                     <div className="text-gray-600 text-sm mb-1">WhatsApp</div>
                     <a href="https://wa.me/79938924489" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                      +7 (999) 000-00-01
+                      +7 (993) 892-44-89
                     </a>
                   </div>
                 </div>
