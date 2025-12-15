@@ -119,7 +119,7 @@ export default function Contact({ orderData, setOrderData }: any) {
                   type="checkbox"
                   checked={agreement}
                   onChange={(e) => setAgreement(e.target.checked)}
-                  className="mt-1 w-5 h-5 accent-yellow-500"
+                  className="mt-0 w-10 h-10 accent-yellow-500"
                   required
                 />
                 <p className="text-sm text-gray-600 leading-snug">

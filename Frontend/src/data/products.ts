@@ -112,30 +112,121 @@ export const products: Product[] = [
 export const projects: ProjectShowcase[] = [
   {
     id: '1',
-    title: 'Luxury Residential Complex',
-    location: 'Moscow City Center',
-    image: 'A101.JPG',
-    description: 'Complete ventilation system with custom bronze grilles for 50 premium apartments'
+    images: [
+      {
+        src: 'A101.JPG',
+        title: 'A101',
+        location: 'Moscow City Center',
+        description: 'Фасадные вентиляционные корзины в бронзовом исполнении',
+      },
+      {
+        src: 'A102.JPG',
+        title: 'A101',
+        location: 'Moscow City Center',
+        description: 'Индивидуальные корзины под нестандартные проёмы',
+      },
+      {
+        src: 'A103.JPG',
+        title: 'A101',
+        location: 'Moscow City Center',
+        description: 'Скрытая вентиляция без нарушения архитектуры',
+      },
+      {
+        src: 'A104.JPG',
+        title: 'A101',
+        location: 'Moscow City Center',
+        description: 'Комплексное решение для премиум-апартаментов',
+      },
+    ],
   },
+
   {
     id: '2',
-    title: 'Modern Office Tower',
-    location: 'Business District',
-    image: 'https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Industrial-style exposed ventilation with black linear grilles across 15 floors'
+    images: [
+      {
+        src: 'office1.jpg',
+        title: 'Office Tower',
+        location: 'Business District',
+        description: 'Линейные решётки в офисных пространствах',
+      },
+      {
+        src: 'office2.jpg',
+        title: 'Office Tower',
+        location: 'Business District',
+        description: 'Единый стиль на всех этажах',
+      },
+      {
+        src: 'office3.jpg',
+        title: 'Office Tower',
+        location: 'Business District',
+        description: 'Черные матовые решётки',
+      },
+      {
+        src: 'office4.jpg',
+        title: 'Office Tower',
+        location: 'Business District',
+        description: 'Индустриальный дизайн вентиляции',
+      },
+    ],
   },
+
   {
     id: '3',
-    title: 'Boutique Hotel',
-    location: 'Historic District',
-    image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Decorative brass grilles seamlessly integrated into classical interior design'
+    images: [
+      {
+        src: 'hotel1.jpg',
+        title: 'Boutique Hotel',
+        location: 'Historic District',
+        description: 'Декоративные вентиляционные панели',
+      },
+      {
+        src: 'hotel2.jpg',
+        title: 'Boutique Hotel',
+        location: 'Historic District',
+        description: 'Интеграция в классический интерьер',
+      },
+      {
+        src: 'hotel3.jpg',
+        title: 'Boutique Hotel',
+        location: 'Historic District',
+        description: 'Латунные решётки ручной работы',
+      },
+      {
+        src: 'hotel4.jpg',
+        title: 'Boutique Hotel',
+        location: 'Historic District',
+        description: 'Единый архитектурный стиль',
+      },
+    ],
   },
+
   {
     id: '4',
-    title: 'Contemporary Restaurant',
-    location: 'Downtown',
-    image: 'https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Custom floor and ceiling ventilation solution with architectural elegance'
-  }
+    images: [
+      {
+        src: 'restaurant1.jpg',
+        title: 'Restaurant',
+        location: 'Downtown',
+        description: 'Потолочные вентиляционные решения',
+      },
+      {
+        src: 'restaurant2.jpg',
+        title: 'Restaurant',
+        location: 'Downtown',
+        description: 'Скрытая система вентиляции',
+      },
+      {
+        src: 'restaurant3.jpg',
+        title: 'Restaurant',
+        location: 'Downtown',
+        description: 'Современный индустриальный стиль',
+      },
+      {
+        src: 'restaurant4.jpg',
+        title: 'Restaurant',
+        location: 'Downtown',
+        description: 'Индивидуальное проектирование',
+      },
+    ],
+  },
 ];

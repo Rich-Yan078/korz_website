@@ -18,10 +18,15 @@ export interface CartItem {
   quantity: number;
 }
 
-export interface ProjectShowcase {
-  id: string;
+/* 👇 НОВОЕ */
+export interface ProjectImage {
+  src: string;
   title: string;
   location: string;
-  image: string;
   description: string;
+}
+
+export interface ProjectShowcase {
+  id: string;
+  images: ProjectImage[];
 }

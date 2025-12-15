@@ -8,77 +8,78 @@ interface CatalogProps {
 }
 
 export default function Catalog({ products, onViewDetails }: CatalogProps) {
-  const [visibleItems, setVisibleItems] = useState<number>(0);
-  const [animationStarted, setAnimationStarted] = useState<boolean>(false);
+  const [visibleItems, setVisibleItems] = useState(0);
 
-  // Следим за появлением каталога на экране → запускаем анимацию
   useEffect(() => {
-    const section = document.getElementById("section-catalog");
-    if (!section) return;
+    const isMobile = window.innerWidth < 768;
+
+    // 📱 Мобильные — сразу показываем все карточки
+    if (isMobile) {
+      setVisibleItems(products.length);
+      return;
+    }
+
+    const section = document.getElementById("catalog");
+
+    // если observer не сработал — фолбэк
+    if (!section) {
+      setVisibleItems(products.length);
+      return;
+    }
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !animationStarted) {
-          setAnimationStarted(true);
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
 
-          // Запускаем красивое последовательное появление
-          products.forEach((_, index) => {
-            setTimeout(() => {
-              setVisibleItems((prev) => prev + 1);
-            }, index * 120); // задержка между карточками
-          });
-        }
+        products.forEach((_, index) => {
+          setTimeout(() => {
+            setVisibleItems((prev) =>
+              Math.min(prev + 1, products.length)
+            );
+          }, index * 100);
+        });
+
+        observer.disconnect();
       },
-      { threshold: 0.3 }
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -80px 0px",
+      }
     );
 
     observer.observe(section);
 
     return () => observer.disconnect();
-  }, [products, animationStarted]);
+  }, [products]);
 
   return (
-    <section
-      id="catalog"
-      className="relative py-28 overflow-hidden"
-    >
-      <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-t from-transparent to-black/60 pointer-events-none z-10" />
-
+    <section id="catalog" className="relative py-28 overflow-hidden">
+      {/* ФОНОВОЕ ИЗОБРАЖЕНИЕ */}
       <img
         src="/catalog_fon.jpg"
         alt=""
         aria-hidden="true"
-        loading="lazy"
+        loading="eager"
+        fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
+      {/* ЗАТЕМНЕНИЕ */}
       <div className="absolute inset-0 bg-black/70" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Наша <span className="text-yellow-300">Коллекция</span>
-          </h2>
-
-          <p className="text-white/90 text-lg max-w-2xl mx-auto mt-4">
-            Изготавливаем из высококачественного оцинкованного металла и красим порошковой краской.
-          </p>
-        </div>
-
-        {/* Сетка карточек */}
+      {/* КОНТЕНТ */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {products.map((product, index) => (
             <div
               key={product.id}
-              className={`transition-all duration-700 ease-out
-                ${index < visibleItems
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-6"
+              className={`transition-all duration-500 ease-out
+                ${
+                  index < visibleItems
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
                 }`}
-              style={{
-                transitionDelay: `${index * 80}ms`,
-              }}
             >
               <ProductCard
                 product={product}
@@ -89,9 +90,9 @@ export default function Catalog({ products, onViewDetails }: CatalogProps) {
         </div>
 
         {products.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-white/80 text-lg">Товары не найдены</p>
-          </div>
+          <p className="text-center text-white/80 mt-10">
+            Товары не найдены
+          </p>
         )}
       </div>
     </section>
