@@ -1,4 +1,4 @@
-import {  Instagram, Mail, Send} from 'lucide-react';
+import {  Mail, Send} from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -25,10 +25,7 @@ export default function Footer() {
               <a href="https://web.telegram.org/k/#@Rich_Yan" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
                 <Send className="text-gray-600 hover:text-yellow-600" size={20} />
               </a>
-              <a href="#" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
-                <Instagram className="text-gray-600 hover:text-yellow-600" size={20} />
-              </a>
-              <a href="" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
+              <a href="mailto:ventilyaciya-mos.ru@yandex.ru" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
                 <Mail className="text-gray-600 hover:text-yellow-600" size={20} />
               </a>
             </div>

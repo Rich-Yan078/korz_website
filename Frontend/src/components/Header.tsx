@@ -80,9 +80,9 @@ export default function Header() {
             </nav>
 
             <div className="flex items-center gap-4">
-              <a href="tel:+79938924489" className="hidden md:flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors font-medium">
+              <a href="tel:+79959009556" className="hidden md:flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors font-medium">
                 <Phone size={18} />
-                <span className="select-none">+7 (993) 892-44-89</span>
+                <span className="select-none">+7 (995) 900-95-56</span>
               </a>
 
               <button
@@ -115,9 +115,9 @@ export default function Header() {
               <button onClick={() => scrollToSection("contact")} className="text-white hover:text-yellow-300 text-left font-medium">
                 Контакты
               </button>
-              <a href="tel:+79938924489" className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors font-medium">
+              <a href="tel:+79959009556" className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors font-medium">
                 <Phone size={18} />
-                <span>+7 (993) 892-44-89</span>
+                <span>+7 (995) 900-95-56</span>
               </a>
             </nav>
           </div>

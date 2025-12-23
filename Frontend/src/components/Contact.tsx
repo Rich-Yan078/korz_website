@@ -38,7 +38,7 @@ export default function Contact({ orderData, setOrderData }: any) {
         {/* Заголовок */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Свяжитесь с <span className="text-blue-600">Нами</span>
+            Свяжитесь с <span className="text-yellow-5s00">Нами</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Готовы преобразить ваше пространство? Свяжитесь с нами для консультации и расчета стоимости
@@ -153,41 +153,41 @@ export default function Contact({ orderData, setOrderData }: any) {
             </form>
           </div>
 
-          {/* ПРАВАЯ ЧАСТЬ — ПОЛНОСТЬЮ ТВОЯ, БЕЗ ИЗМЕНЕНИЙ */}
+          
           <div className="space-y-8">
 
             {/* Контакты */}
-            <div className="bg-white border border-blue-200 rounded-xl p-8 shadow-lg">
+            <div className="bg-white border border-yellow-200 rounded-xl p-8 shadow-lg">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Контактная информация</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <Phone className="text-blue-600" size={24} />
+                  <div className="p-3 bg-yellow-100 rounded-lg">
+                    <Phone className="text-yellow-600" size={24} />
                   </div>
                   <div>
                     <div className="text-gray-600 text-sm mb-1">Телефон</div>
-                    <a href="tel:+79938924489" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                      +7 (993) 892-44-89
+                    <a href="tel:+79959009556" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
+                      +7 (995) 900-95-56
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <Mail className="text-blue-600" size={24} />
+                  <div className="p-3 bg-yellow-100 rounded-lg">
+                    <Mail className="text-yellow-600" size={24} />
                   </div>
                   <div>
                     <div className="text-gray-600 text-sm mb-1">Email</div>
-                    <a href="mailto:info@ventgold.ru" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                      info@ventgold.ru
+                    <a href="mailto:ventilyaciya-mos.ru@yandex.ru" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
+                      ventilyaciya-mos.ru@yandex.ru
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <MapPin className="text-blue-600" size={24} />
+                  <div className="p-3 bg-yellow-100 rounded-lg">
+                    <MapPin className="text-yellow-600" size={24} />
                   </div>
                   <div>
                     <div className="text-gray-600 text-sm mb-1">Адрес</div>
@@ -196,13 +196,13 @@ export default function Contact({ orderData, setOrderData }: any) {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <MessageCircle className="text-blue-600" size={24} />
+                  <div className="p-3 bg-yellow-100 rounded-lg">
+                    <MessageCircle className="text-yellow-600" size={24} />
                   </div>
                   <div>
                     <div className="text-gray-600 text-sm mb-1">WhatsApp</div>
-                    <a href="https://wa.me/79938924489" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                      +7 (993) 892-44-89
+                    <a href="https://wa.me/79959009556" className="text-lg font-semibold text-gray-900 hover:text-blue-600">
+                      +7 (995) 900-95-56
                     </a>
                   </div>
                 </div>
@@ -210,13 +210,13 @@ export default function Contact({ orderData, setOrderData }: any) {
             </div>
 
             {/* Часы работы */}
-            <div className="bg-gradient-to-br from-blue-100 to-blue-50 border border-blue-300 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-white-100 to-white-50 border border-yellow-300 rounded-xl p-8">
               <h2 className="text-xl font-bold text-gray-900 mb-3">Часы работы</h2>
 
               <div className="space-y-2 text-gray-700">
                 <div className="flex justify-between">
                   <span>Пн - Пт:</span>
-                  <span className="text-blue-600 font-semibold">9:00 - 19:00</span>
+                  <span className="text-black-600 font-semibold">9:00 - 19:00</span>
                 </div>
 
                 <div className="flex justify-between">
