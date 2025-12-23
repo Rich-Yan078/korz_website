@@ -48,7 +48,7 @@ export default function Contact({ orderData, setOrderData }: any) {
         {/* ✔ Блок выбранного товара */}
         {orderData?.product && (
           <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-6 mb-12">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Вы выбрали:</h3>
+            <h2 className="text-xl font-bold text-gray-900 mb-3">Вы выбрали:</h2>
 
             <p className="text-gray-800"><b>Товар:</b> {orderData.product}</p>
             <p className="text-gray-800"><b>Размер:</b> {orderData.size}</p>
@@ -158,7 +158,7 @@ export default function Contact({ orderData, setOrderData }: any) {
 
             {/* Контакты */}
             <div className="bg-white border border-blue-200 rounded-xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Контактная информация</h3>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Контактная информация</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -211,7 +211,7 @@ export default function Contact({ orderData, setOrderData }: any) {
 
             {/* Часы работы */}
             <div className="bg-gradient-to-br from-blue-100 to-blue-50 border border-blue-300 rounded-xl p-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-3">Часы работы</h4>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Часы работы</h2>
 
               <div className="space-y-2 text-gray-700">
                 <div className="flex justify-between">

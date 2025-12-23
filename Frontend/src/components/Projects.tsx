@@ -80,9 +80,9 @@ function ProjectCard({ project }: { project: ProjectShowcase }) {
                 <span className="text-sm">{img.location}</span>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-1">
+              <h2 className="text-xl font-bold text-white mb-1">
                 {img.title}
-              </h3>
+              </h2>
 
               
             </div>

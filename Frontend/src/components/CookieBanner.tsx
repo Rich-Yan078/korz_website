@@ -108,7 +108,7 @@ export default function CookieBanner() {
             </div>
 
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-white mb-2">Настройки конфиденциальности</h3>
+              <h2 className="text-xl font-bold text-white mb-2">Настройки конфиденциальности</h2>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Мы используем cookies и сервисы аналитики (Яндекс.Метрика / Google Analytics) для
                 улучшения работы сайта и анализа посещаемости. Подробнее в{" "}
