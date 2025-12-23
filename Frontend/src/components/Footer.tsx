@@ -28,7 +28,7 @@ export default function Footer() {
               <a href="#" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
                 <Instagram className="text-gray-600 hover:text-yellow-600" size={20} />
               </a>
-              <a href="#" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
+              <a href="" className="p-2 bg-yellow-100 hover:bg-yellow-200 rounded-lg transition-colors">
                 <Mail className="text-gray-600 hover:text-yellow-600" size={20} />
               </a>
             </div>
@@ -47,7 +47,7 @@ export default function Footer() {
                 <a href="#projects" className="text-gray-600 hover:text-yellow-600 transition-colors">Проекты</a>
               </li>
               <li>
-                <a href="#faq" className="text-gray-600 hover:text-yellow-600 transition-colors">FAQ</a>
+                <a href="#works" className="text-gray-600 hover:text-yellow-600 transition-colors">Работы</a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-600 hover:text-yellow-600 transition-colors">Контакты</a>
@@ -55,16 +55,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-gray-900 font-bold mb-4">Серии продуктов</h3>
-            <ul className="space-y-2">
-              <li className="text-gray-600">S-серия Линейные</li>
-              <li className="text-gray-600">M-серия Декоративные</li>
-              <li className="text-gray-600">V-серия Потолочные</li>
-              <li className="text-gray-600">L-серия Напольные</li>
-              <li className="text-gray-600">R-серия Регулируемые</li>
-            </ul>
-          </div>
         </div>
 
         <div className="border-t border-yellow-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -72,7 +62,7 @@ export default function Footer() {
             © 2026 VentGold. Все права защищены.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-gray-500 hover:text-yellow-600 transition-colors">
+            <a href="/privacy-policy" className="text-gray-500 hover:text-yellow-600 transition-colors">
               Политика конфиденциальности
             </a>
             <a href="/personal-data-agreement" className="text-gray-500 hover:text-yellow-600 transition-colors">

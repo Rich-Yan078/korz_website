@@ -1,5 +1,6 @@
 export interface Product {
   id: string;
+  slug: string;
   name: string;
   description: string[];
   price: number;
@@ -22,8 +23,8 @@ export interface CartItem {
 export interface ProjectImage {
   src: string;
   title: string;
-  location: string;
-  description: string;
+  location?: string;
+  
 }
 
 export interface ProjectShowcase {

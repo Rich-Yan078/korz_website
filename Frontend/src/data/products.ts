@@ -3,6 +3,7 @@ import { Product, ProjectShowcase } from '../types';
 export const products: Product[] = [
   {
     id: '1',
+    slug: "korzina-dlya-kondicionera-lameli",
     name: 'Корзина для кондиционера',
     description: [
   'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
@@ -21,6 +22,7 @@ export const products: Product[] = [
   },
   {
     id: '2',
+    slug: "panel-dlya-kondicionera-lameli",
     name: 'Панель для кондиционера',
     description: [
   'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
@@ -39,6 +41,7 @@ export const products: Product[] = [
   },
   {
     id: '3',
+    slug: "panel-dlya-kondicionera-perforaciya-krug",
     name: 'Панель для кондиционера',
     description: [
   'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
@@ -57,6 +60,7 @@ export const products: Product[] = [
   },
   {
     id: '4',
+    slug: "korzina-dlya-kondicionera-perforaciya-kirpich",
     name: 'Корзина для кондиционера',
     description: [
   'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
@@ -75,6 +79,7 @@ export const products: Product[] = [
   },
   {
     id: '5',
+    slug: "korzina-dlya-kondicionera-perforaciya-kvadrat",
     name: 'Корзина для кондиционера',
     description: [
   'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
@@ -92,6 +97,7 @@ export const products: Product[] = [
   },
   {
     id: '6',
+    slug: "kronshteyni",
     name: 'Кронштейны ',
     description: [
   'Актуальную стоимость изделия и доставки уточняйте у наших менеджеров.',
@@ -116,26 +122,23 @@ export const projects: ProjectShowcase[] = [
       {
         src: 'A101.JPG',
         title: 'A101',
-        location: 'Moscow City Center',
-        description: 'Фасадные вентиляционные корзины в бронзовом исполнении',
+        location: 'ЖК "Прокшино"',
       },
       {
-        src: 'A102.JPG',
+        src: 'A101(Skandinavia).JPG',
         title: 'A101',
-        location: 'Moscow City Center',
-        description: 'Индивидуальные корзины под нестандартные проёмы',
+        location: 'ЖК "Скандинавия"',
       },
       {
-        src: 'A103.JPG',
-        title: 'A101',
-        location: 'Moscow City Center',
-        description: 'Скрытая вентиляция без нарушения архитектуры',
+        src: 'А101(Ispanskiy).JPG',
+        title: 'А101',
+        location: 'ЖК "Испанские Кварталы"',
       },
       {
-        src: 'A104.JPG',
+        src: 'A101(Desnarechye).JPG',
         title: 'A101',
-        location: 'Moscow City Center',
-        description: 'Комплексное решение для премиум-апартаментов',
+        location: 'ЖК "Деснаречье"',
+        
       },
     ],
   },
@@ -144,28 +147,24 @@ export const projects: ProjectShowcase[] = [
     id: '2',
     images: [
       {
-        src: 'office1.jpg',
-        title: 'Office Tower',
-        location: 'Business District',
-        description: 'Линейные решётки в офисных пространствах',
+        src: 'Samolet(Novoe_vnukovo).JPG',
+        title: 'Самолет',
+        location: 'ЖК "Новое Внуково"',
       },
       {
-        src: 'office2.jpg',
-        title: 'Office Tower',
-        location: 'Business District',
-        description: 'Единый стиль на всех этажах',
+        src: 'Samolet(Priberjniy_park).JPG',
+        title: 'Самолет',
+        location: 'ЖК "Прибрежный Парк"',
       },
       {
-        src: 'office3.jpg',
-        title: 'Office Tower',
-        location: 'Business District',
-        description: 'Черные матовые решётки',
+        src: 'Samolet(Prigorod_Lesnoye).JPG',
+        title: 'Самолет',
+        location: 'ЖК "Пригород Лесное"',
       },
       {
-        src: 'office4.jpg',
-        title: 'Office Tower',
-        location: 'Business District',
-        description: 'Индустриальный дизайн вентиляции',
+        src: 'Samolet(Lyuberci).JPG',
+        title: 'Самолет',
+        location: 'ЖК "Люберцы"',
       },
     ],
   },
@@ -174,29 +173,25 @@ export const projects: ProjectShowcase[] = [
     id: '3',
     images: [
       {
-        src: 'hotel1.jpg',
-        title: 'Boutique Hotel',
-        location: 'Historic District',
-        description: 'Декоративные вентиляционные панели',
+        src: 'Лср(лучи).JPG',
+        title: 'ЛСР',
+        location: 'ЖК "Лучи"',
       },
       {
-        src: 'hotel2.jpg',
-        title: 'Boutique Hotel',
-        location: 'Historic District',
-        description: 'Интеграция в классический интерьер',
+        src: 'Parkside.jpg',
+        title: 'ЛСР',
+        location: 'ЖК "Парксайд"',
       },
       {
-        src: 'hotel3.jpg',
-        title: 'Boutique Hotel',
-        location: 'Historic District',
-        description: 'Латунные решётки ручной работы',
+        src: 'brusnika.jpg',
+        title: 'Первый Квартал',
+        location: 'ЖК "Брусника"',
       },
       {
-        src: 'hotel4.jpg',
-        title: 'Boutique Hotel',
-        location: 'Historic District',
-        description: 'Единый архитектурный стиль',
-      },
+        src: 'Izumrud.jpg',
+        title: 'Эталон',
+        location: 'ЖК "Изумрудные Холмы"',
+      }
     ],
   },
 
@@ -204,28 +199,24 @@ export const projects: ProjectShowcase[] = [
     id: '4',
     images: [
       {
-        src: 'restaurant1.jpg',
-        title: 'Restaurant',
-        location: 'Downtown',
-        description: 'Потолочные вентиляционные решения',
+        src: 'am.jpg',
+        title: 'Сеть магазинов "АМ"',
+        location: 'г. Москва',
       },
       {
-        src: 'restaurant2.jpg',
-        title: 'Restaurant',
-        location: 'Downtown',
-        description: 'Скрытая система вентиляции',
+        src: 'vinlab.jpg',
+        title: 'Сеть магазинов "Винлаб"',
+        location: 'г. Санкт-Петербург',
       },
       {
-        src: 'restaurant3.jpg',
-        title: 'Restaurant',
-        location: 'Downtown',
-        description: 'Современный индустриальный стиль',
+        src: 'buxanka.jpg',
+        title: 'Сеть магазинов "Буханка"',
+        location: 'г. Новосибирск',
       },
       {
-        src: 'restaurant4.jpg',
-        title: 'Restaurant',
-        location: 'Downtown',
-        description: 'Индивидуальное проектирование',
+        src: 'vv.jpg',
+        title: 'Сеть магазинов "ВкусВилл"',
+        location: 'г. Екатеринбург',
       },
     ],
   },

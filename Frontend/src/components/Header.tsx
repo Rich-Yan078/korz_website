@@ -71,8 +71,8 @@ export default function Header() {
               <button onClick={() => scrollToSection("projects")} className={`font-medium transition-colors ${isScrolled ? "text-white hover:text-yellow-300" : "text-white hover:text-yellow-300"}`}>
                 Проекты
               </button>
-              <button onClick={() => scrollToSection("faq")} className={`font-medium transition-colors ${isScrolled ? "text-white hover:text-yellow-300" : "text-white hover:text-yellow-300"}`}>
-                FAQ
+              <button onClick={() => scrollToSection("works")} className={`font-medium transition-colors ${isScrolled ? "text-white hover:text-yellow-300" : "text-white hover:text-yellow-300"}`}>
+                Работы
               </button>
               <button onClick={() => scrollToSection("contact")} className={`font-medium transition-colors ${isScrolled ? "text-white hover:text-yellow-300" : "text-white hover:text-yellow-300"}`}>
                 Контакты
@@ -109,8 +109,8 @@ export default function Header() {
               <button onClick={() => scrollToSection("projects")} className="text-white hover:text-yellow-300 text-left font-medium">
                 Проекты
               </button>
-              <button onClick={() => scrollToSection("faq")} className="text-white hover:text-yellow-300 text-left font-medium">
-                FAQ
+              <button onClick={() => scrollToSection("works")} className="text-white hover:text-yellow-300 text-left font-medium">
+                Работы
               </button>
               <button onClick={() => scrollToSection("contact")} className="text-white hover:text-yellow-300 text-left font-medium">
                 Контакты

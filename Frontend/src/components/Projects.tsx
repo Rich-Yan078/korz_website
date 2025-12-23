@@ -14,8 +14,8 @@ export default function Projects({ projects }: ProjectsProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Избранные <span className="text-yellow-600">Проекты</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Наши <span className="text-yellow-600">Проекты</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Реализованные проекты с индивидуальными вентиляционными решениями
@@ -32,9 +32,7 @@ export default function Projects({ projects }: ProjectsProps) {
   );
 }
 
-/* ===================== */
 /* ===== CARD ===== */
-/* ===================== */
 
 function ProjectCard({ project }: { project: ProjectShowcase }) {
   const [index, setIndex] = useState(0);
@@ -86,9 +84,7 @@ function ProjectCard({ project }: { project: ProjectShowcase }) {
                 {img.title}
               </h3>
 
-              <p className="text-gray-200 text-sm">
-                {img.description}
-              </p>
+              
             </div>
           </div>
         ))}

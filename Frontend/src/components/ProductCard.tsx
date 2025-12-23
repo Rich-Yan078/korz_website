@@ -1,3 +1,4 @@
+// src/components/ProductCard.tsx
 import { Gift } from 'lucide-react';
 import { Product } from '../types';
 
@@ -7,6 +8,10 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onViewDetails }: ProductCardProps) {
+  const descriptionText = Array.isArray(product.description)
+    ? product.description.join(' ')
+    : product.description || '';
+
   return (
     <div
       className="group bg-white rounded-xl overflow-hidden border border-yellow-200 hover:border-yellow-400 transition-all duration-300 hover:shadow-xl flex flex-col h-[600px] cursor-pointer"
@@ -25,12 +30,12 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
 
       {/* ——— КОНТЕНТ ——— */}
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-1">
+        <h1 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-1">
           {product.name}
-        </h3>
+        </h1>
 
         <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">
-          {product.description}
+          {descriptionText}
         </p>
 
         <div className="mb-4 space-y-1 text-sm bg-yellow-50 p-3 rounded-lg">
@@ -60,7 +65,6 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
 
           {/* Подарок — отдельная группа */}
           <div className="relative group/icon" onClick={(e) => e.stopPropagation()}>
-            
             {/* ИКОНКА С bounce */}
             <div
               className="
@@ -73,17 +77,15 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
               <Gift size={20} />
             </div>
 
-            {/* ТУЛТИП СЛЕВА */}
+            {/* ТУЛТИП */}
             <div
               className="
                 absolute right-full mr-3 top-1/2 -translate-y-1/2
                 px-3 py-1.5 
                 bg-yellow-100 text-black text-xs font-semibold
                 rounded-lg shadow-lg whitespace-nowrap z-50
-
                 opacity-0 scale-75 translate-x-2
                 transition-all duration-300 ease-out
-
                 group-hover/icon:opacity-100
                 group-hover/icon:scale-100
                 group-hover/icon:translate-x-0
@@ -91,8 +93,6 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
               style={{ pointerEvents: 'none' }}
             >
               Покраска в подарок
-
-              {/* Хвостик */}
               <div
                 className="
                   absolute left-full top-1/2 -translate-y-1/2
